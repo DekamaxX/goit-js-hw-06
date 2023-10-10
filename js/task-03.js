@@ -1,4 +1,3 @@
-'use strict';
 const images = [
   {
     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -14,12 +13,11 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector('.gallery');
+const listOfImages = document.querySelector(`.gallery`);
 
-const galleryElements = images
-  .map(element => `<li><img src="${element.url}" alt="${element.alt}"/></li>`)
-  .join('');
-
-console.log(galleryElements);
-
-gallery.insertAdjacentHTML('afterbegin', galleryElements);
+images.forEach(image => {
+  listOfImages.insertAdjacentHTML(
+    'afterbegin',
+    `<li><img class="img" src="${image.url}" alt="${image.alt}"></img></li>`
+  );
+});

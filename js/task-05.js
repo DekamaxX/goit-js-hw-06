@@ -1,15 +1,10 @@
-'use strict';
-const textInput = document.querySelector('#name-input');
-const textSpan = document.querySelector('#name-output');
+const textInput = document.querySelector(`#name-input`);
+const output = document.querySelector(`#name-output`);
 
-const defaultText = textSpan.innerHTML;
+textInput.addEventListener('input', event => {
+  output.textContent = event.currentTarget.value;
 
-const changeTextSpam = () => {
-  if (textInput.value !== '') {
-    textSpan.innerHTML = textInput.value;
-  } else {
-    textSpan.innerHTML = defaultText;
+  if (event.currentTarget.value === '') {
+    output.textContent = 'Anonymus';
   }
-};
-
-textInput.addEventListener('input', changeTextSpam);
+});
