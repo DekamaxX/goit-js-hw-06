@@ -1,3 +1,5 @@
+const form = document.querySelector('.login-form');
+
 const submit = event => {
   event.preventDefault();
 
